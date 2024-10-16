@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa sabe o no sabe</title>
+    <title>Página con Selección</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,6 +17,34 @@
             <option value="opcion1">Sabe</option>
             <option value="opcion2">No sabe</option>
         </select>
+        <br><br>
+        <button id="enviar">Enviar</button>
+        <p id="resultado"></p>
     </div>
+
+    <script>
+       
+        function manejarSeleccion() {
+            const select = document.getElementById("opciones");
+            const resultado = document.getElementById("resultado");
+            const botonEnviar = document.getElementById("enviar");
+
+            
+            botonEnviar.addEventListener("click", function() {
+                const opcionSeleccionada = select.value;
+
+                
+                if (opcionSeleccionada === "opcion1") {
+                    resultado.textContent = "Entonces puede opinar";
+                } else if (opcionSeleccionada === "opcion2") {
+                    resultado.textContent = "No opine";
+                }
+            });
+        }
+
+        
+        manejarSeleccion();
+    </script>
 </body>
 </html>
+
